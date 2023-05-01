@@ -25,7 +25,7 @@ class Compute extends Controller
             }
 
         }
-        return $fall;
+        return redirect()->back()->with('success',$fall);
     }
     public function save(){
         $fall = 0;
@@ -43,7 +43,7 @@ class Compute extends Controller
             }
 
         }
-        return $fall;
+        return redirect()->back()->with('success',$fall);
     }
     public function savings(){
         $fall = 0;
@@ -61,7 +61,7 @@ class Compute extends Controller
             }
 
         }
-        return $fall;
+        return redirect()->back()->with('success',$fall);
     }
     public function what(){
         $fall = 0;
@@ -80,7 +80,7 @@ class Compute extends Controller
 
         }
         $fall = $fall/5;
-        return $fall;
+        return redirect()->back()->with('success',$fall);
     }
     public function find(){
         $fall = 0;
@@ -106,4 +106,5 @@ class Compute extends Controller
             return view('green');
         }
     }
+
 }
