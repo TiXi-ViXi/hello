@@ -32,5 +32,5 @@
         </div>
     </div>
 </div>
-<a href="{{route('class.index')}}">asdasdsa</a>
+
 @endsection

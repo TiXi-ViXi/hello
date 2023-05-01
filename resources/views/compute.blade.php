@@ -10,6 +10,9 @@
                 </div>
 
                 <div class="card-body">
+                @if(session()->has('success'))
+                    <strong class="text-success">{{session()->get('success')}}</strong>
+                    @endif
                 <table class = "table table-responsive table-strioe">
                     <thread>
                         <tr>
