@@ -66,13 +66,17 @@ class Compute extends Controller
     public function what(){
         $fall = 0;
         for ($x = 0; $x <= 1000; $x++) {
-
+            $count = 0;
 
             $helloo = DB::table('moneys')->where('id',$x)->value('what');
 
             $hello = DB::table('moneys')->where('id',$x)->value('amount');
             if($helloo == 'p'){
                 $fall = $fall + $hello;
+                $count = $count + 1;
+            }
+            else if($helloo == 'n'){
+                $count = $count + 1;
             }
             else{
 
@@ -80,7 +84,12 @@ class Compute extends Controller
 
         }
         $fall = $fall/5;
+        if($count == 0){
+            return redirect()->back()->with('success','Brother Are you dump? Put some data');
+        }
+        else{
         return redirect()->back()->with('success',$fall);
+        }
     }
     public function find(){
         $fall = 0;
